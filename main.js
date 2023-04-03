@@ -3,16 +3,16 @@ const inputBox= document.getElementById('myInput');
 const dope = document.getElementById('dope');
 const doper = document.getElementById('doper');
 const scoreBox = document.getElementById('score');
-
+let score = 0
 
 btn1.addEventListener('click', search);
 
-let listOfName = ['frankie', 'johny'];
+let listOfName = ['frankie', "johny"];
 function names () {
 dope.innerText = listOfName;
 
 } 
-names()
+names();
 
 function randomIndex() {
     const rando = Math.floor(Math.random() * listOfName.length)
@@ -26,7 +26,7 @@ function search () {
     console.log(listOfName);
 
     const rando = randomIndex();
-    console.log(rando);
+    // console.log(rando);
 
     answer = listOfName[rando];
     // console.log(answer)
@@ -34,7 +34,6 @@ function search () {
     var inputVal = inputBox.value
     console.log(inputVal);
 
-    let score = 0
     scoreBox.innerText = score;
 
 
@@ -48,7 +47,7 @@ function search () {
         scoreBox.innerText = score
     } 
     if (inputVal !== answer) {
-        console.log('false')
+        // console.log('false')
         doper.innerText = "Incorrect"
         inputBox.value = ''
         score--
